@@ -104,11 +104,14 @@ function OverviewTab() {
       </div>
 
       <div className="bg-gradient-to-r from-indigo-500 to-purple-500 rounded-xl p-6 text-white">
-        <h3 className="text-xl font-bold mb-2">📂 Файлы проекта</h3>
-        <p className="text-indigo-100">
-          Все файлы Android-проекта находятся в папке <code className="bg-white/20 px-2 py-0.5 rounded">SERVER/</code>. 
-          Скопируйте их в корень вашего Android Studio проекта.
+        <h3 className="text-xl font-bold mb-2">📂 Проект готов к открытию!</h3>
+        <p className="text-indigo-100 mb-3">
+          Все файлы Android-проекта находятся в папке <code className="bg-white/20 px-2 py-0.5 rounded">SERVER/</code>.
         </p>
+        <div className="bg-white/10 rounded-lg p-4">
+          <p className="text-sm font-medium">👉 Как открыть:</p>
+          <p className="text-sm mt-1">Android Studio → File → Open → Выбери папку SERVER/ → Готово!</p>
+        </div>
       </div>
     </div>
   )
@@ -247,28 +250,23 @@ function InstallTab() {
   const steps = [
     {
       step: 1,
-      title: 'Создай новый проект',
-      description: 'Открой Android Studio → New Project → Empty Activity. Package name: com.emotiondiary.app. Min SDK: API 26. Language: Kotlin.',
+      title: 'Открой Android Studio',
+      description: 'Запусти Android Studio (рекомендуется Hedgehog 2023.1.1 или новее).',
     },
     {
       step: 2,
-      title: 'Скопируй файлы Gradle',
-      description: 'Замени settings.gradle и build.gradle (root) в корне проекта. Замени app/build.gradle в папке app/.',
+      title: 'Нажми File → Open',
+      description: 'В меню выбери File → Open, затем найди и выбери папку SERVER/ с проектом.',
     },
     {
       step: 3,
-      title: 'Скопируй исходный код',
-      description: 'Скопируй всю папку app/src/main/ из SERVER/ в свой проект, заменив существующие файлы.',
+      title: 'Дождись Gradle Sync',
+      description: 'Android Studio автоматически определит проект и начнёт синхронизацию Gradle. Дождись завершения (может занять 2-5 минут при первом запуске).',
     },
     {
       step: 4,
-      title: 'Sync Gradle',
-      description: 'Нажми "Sync Now" в Android Studio для загрузки зависимостей.',
-    },
-    {
-      step: 5,
       title: 'Запусти приложение',
-      description: 'Подключи устройство или запусти эмулятор. Нажми Run (Shift+F10).',
+      description: 'Подключи Android-устройство или создай эмулятор. Нажми зелёную кнопку Run ▶ или Shift+F10.',
     },
   ]
 
@@ -297,11 +295,24 @@ function InstallTab() {
         </h3>
         <ul className="mt-3 space-y-2 text-sm text-amber-700">
           <li>• Требуется Android Studio Hedgehog (2023.1.1) или новее</li>
-          <li>• Kotlin 1.9+ должен быть установлен</li>
+          <li>• Kotlin 1.9+ должен быть установлен (обычно идёт с Android Studio)</li>
           <li>• Min SDK 26 (Android 8.0 Oreo)</li>
           <li>• Target SDK 34 (Android 14)</li>
           <li>• Для уведомлений на Android 13+ нужно разрешение POST_NOTIFICATIONS</li>
+          <li>• При первом открытии Android Studio скачает Gradle — нужен интернет</li>
+          <li>• Если появится ошибка SDK — укажи путь к Android SDK в local.properties</li>
         </ul>
+      </div>
+
+      <div className="bg-green-50 border border-green-200 rounded-xl p-5">
+        <h3 className="font-semibold text-green-800 flex items-center gap-2">
+          <span>✅</span> Готово к открытию!
+        </h3>
+        <p className="text-sm text-green-700 mt-2">
+          Папка <code className="bg-green-100 px-1 rounded">SERVER/</code> содержит 
+          полностью настроенный проект Android Studio. Просто открой её через 
+          <strong> File → Open</strong> и всё заработает!
+        </p>
       </div>
 
       <div className="bg-white rounded-xl shadow-sm p-6 border border-gray-100">

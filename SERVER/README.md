@@ -1,5 +1,17 @@
 # 📝 Дневник Эмоций — Android App
 
+## ⚡ Быстрый старт
+
+1. Открой **Android Studio**
+2. **File → Open**
+3. Выбери папку **SERVER/** (этот проект)
+4. Дождись Gradle Sync
+5. Нажми **Run ▶**
+
+**Всё! Проект полностью готов к запуску.**
+
+---
+
 ## Описание
 Приложение для отслеживания настроения с поддержкой в трудные моменты.
 
@@ -16,67 +28,82 @@
 
 ## Структура проекта
 ```
-app/src/main/
-├── java/com/emotiondiary/app/
-│   ├── MainActivity.kt          — Главный экран
-│   ├── AddEntryActivity.kt      — Добавление записи
-│   ├── HistoryActivity.kt       — История записей
-│   ├── SettingsActivity.kt      — Настройки
-│   ├── SupportDialogFragment.kt — Диалог поддержки
-│   ├── EmotionDiaryApplication.kt — Application класс
-│   ├── adapters/
-│   │   └── EmotionAdapter.kt    — Адаптер для RecyclerView
-│   ├── data/
-│   │   ├── EmotionEntry.kt      — Модель данных
-│   │   ├── EmotionDao.kt        — DAO для Room
-│   │   ├── AppDatabase.kt       — Room Database
-│   │   ├── EmotionRepository.kt — Репозиторий
-│   │   └── Converters.kt        — TypeConverters
-│   ├── notifications/
-│   │   └── NotificationHelper.kt — Уведомления
-│   ├── receivers/
-│   │   ├── NotificationReceiver.kt — Приёмник уведомлений
-│   │   └── BootReceiver.kt      — Восстановление после перезагрузки
-│   ├── utils/
-│   │   └── SupportMessages.kt   — Сообщения поддержки
-│   └── viewmodels/
-│       └── EmotionViewModel.kt  — ViewModel
-├── res/
-│   ├── layout/
-│   │   ├── activity_main.xml
-│   │   ├── activity_add_entry.xml
-│   │   ├── activity_history.xml
-│   │   ├── activity_settings.xml
-│   │   ├── dialog_support.xml
-│   │   └── item_emotion_entry.xml
-│   ├── drawable/
-│   │   ├── ic_add.xml
-│   │   ├── ic_heart.xml
-│   │   ├── ic_notification.xml
-│   │   ├── ic_back.xml
-│   │   └── bottom_sheet_background.xml
-│   └── values/
-│       ├── colors.xml
-│       ├── strings.xml
-│       └── themes.xml
-└── AndroidManifest.xml
+SERVER/
+├── .idea/                      — Конфигурация Android Studio
+├── app/
+│   ├── build.gradle            — Зависимости модуля
+│   ├── proguard-rules.pro
+│   └── src/main/
+│       ├── AndroidManifest.xml
+│       ├── java/com/emotiondiary/app/
+│       │   ├── MainActivity.kt          — Главный экран
+│       │   ├── AddEntryActivity.kt      — Добавление записи
+│       │   ├── HistoryActivity.kt       — История записей
+│       │   ├── SettingsActivity.kt      — Настройки
+│       │   ├── SupportDialogFragment.kt — Диалог поддержки
+│       │   ├── EmotionDiaryApplication.kt
+│       │   ├── adapters/
+│       │   │   └── EmotionAdapter.kt
+│       │   ├── data/
+│       │   │   ├── EmotionEntry.kt      — Модель (Entity)
+│       │   │   ├── EmotionDao.kt        — DAO
+│       │   │   ├── AppDatabase.kt       — Room Database
+│       │   │   ├── EmotionRepository.kt — Репозиторий
+│       │   │   └── Converters.kt
+│       │   ├── notifications/
+│       │   │   └── NotificationHelper.kt
+│       │   ├── receivers/
+│       │   │   ├── NotificationReceiver.kt
+│       │   │   └── BootReceiver.kt
+│       │   ├── utils/
+│       │   │   └── SupportMessages.kt
+│       │   └── viewmodels/
+│       │       └── EmotionViewModel.kt
+│       └── res/
+│           ├── layout/          — 6 layout файлов
+│           ├── drawable/        — Иконки и фоны
+│           ├── values/          — Цвета, строки, темы
+│           └── mipmap-anydpi-v26/ — Иконка приложения
+├── gradle/wrapper/              — Gradle Wrapper
+├── build.gradle                 — Корневой build файл
+├── settings.gradle              — Настройки проекта
+├── gradle.properties
+├── gradlew / gradlew.bat        — Скрипты Gradle
+└── README.md
 ```
 
-## Как установить в Android Studio
+## Как открыть в Android Studio
 
-1. Создай новый проект в Android Studio (Empty Activity, Kotlin)
+### Вариант 1: Просто открыть (рекомендуется)
+1. Открой Android Studio
+2. **File → Open**
+3. Выбери папку `SERVER/`
+4. Дождись Gradle Sync (2-5 минут при первом запуске)
+5. Нажми **Run ▶** (Shift+F10)
+
+### Вариант 2: Если нужна ручная настройка
+1. Создай новый проект (Empty Activity, Kotlin)
 2. Package name: `com.emotiondiary.app`
-3. Minimum SDK: API 26 (Android 8.0)
-4. Скопируй файлы из папки SERVER в свой проект:
-   - `settings.gradle` → корень проекта
-   - `build.gradle` (root) → корень проекта
-   - `app/build.gradle` → в папку app/
-   - `app/src/` → в папку app/src/
-5. Sync Gradle
-6. Запусти на устройстве или эмуляторе
+3. Скопируй файлы из SERVER/ в проект
+4. Sync Gradle
 
 ## Требования
 - Android Studio Hedgehog (2023.1.1) или новее
-- Kotlin 1.9+
+- Kotlin 1.9+ (обычно идёт с Android Studio)
 - Min SDK 26 (Android 8.0)
 - Target SDK 34 (Android 14)
+- JDK 17 (обычно идёт с Android Studio)
+
+## Технологии
+- **Kotlin** — язык разработки
+- **Room Database** — локальное хранение данных
+- **MVVM** — архитектура
+- **Material Design 3** — UI
+- **Coroutines** — асинхронность
+- **LiveData/ViewModel** — реактивность
+
+## Уведомления
+- Ежедневные напоминания (настраиваемое время, по умолчанию 20:00)
+- Сообщения поддержки при низком настроении (≤3)
+- Восстановление после перезагрузки устройства
+- Требуют разрешения POST_NOTIFICATIONS на Android 13+
