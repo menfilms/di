@@ -15,8 +15,10 @@ function App() {
               <p className="text-indigo-200 mt-1">Android приложение для отслеживания настроения</p>
             </div>
           </div>
-          <div className="flex gap-2 mt-6">
-            <span className="px-3 py-1 bg-white/20 rounded-full text-sm">Kotlin</span>
+          <div className="flex gap-2 mt-6 flex-wrap">
+            <span className="px-3 py-1 bg-white/20 rounded-full text-sm">Kotlin 2.1</span>
+            <span className="px-3 py-1 bg-white/20 rounded-full text-sm">Gradle 9.1</span>
+            <span className="px-3 py-1 bg-white/20 rounded-full text-sm">AGP 9.0</span>
             <span className="px-3 py-1 bg-white/20 rounded-full text-sm">Room DB</span>
             <span className="px-3 py-1 bg-white/20 rounded-full text-sm">MVVM</span>
             <span className="px-3 py-1 bg-white/20 rounded-full text-sm">Material 3</span>
@@ -251,7 +253,7 @@ function InstallTab() {
     {
       step: 1,
       title: 'Открой Android Studio',
-      description: 'Запусти Android Studio (рекомендуется Hedgehog 2023.1.1 или новее).',
+      description: 'Запусти Android Studio (рекомендуется Meerkat 2025.1 или новее).',
     },
     {
       step: 2,
@@ -260,11 +262,16 @@ function InstallTab() {
     },
     {
       step: 3,
+      title: 'Выбери Gradle JDK 17',
+      description: 'Если появится предупреждение о несовместимости JVM, нажми "Apply compatible Gradle JDK configuration" или выбери JDK 17 (jbr-17) в настройках Gradle.',
+    },
+    {
+      step: 4,
       title: 'Дождись Gradle Sync',
       description: 'Android Studio автоматически определит проект и начнёт синхронизацию Gradle. Дождись завершения (может занять 2-5 минут при первом запуске).',
     },
     {
-      step: 4,
+      step: 5,
       title: 'Запусти приложение',
       description: 'Подключи Android-устройство или создай эмулятор. Нажми зелёную кнопку Run ▶ или Shift+F10.',
     },
@@ -294,14 +301,28 @@ function InstallTab() {
           <span>⚠️</span> Важные замечания
         </h3>
         <ul className="mt-3 space-y-2 text-sm text-amber-700">
-          <li>• Требуется Android Studio Hedgehog (2023.1.1) или новее</li>
-          <li>• Kotlin 1.9+ должен быть установлен (обычно идёт с Android Studio)</li>
+          <li>• Требуется Android Studio Meerkat (2025.1+) или новее</li>
+          <li>• JDK 17+ (обычно идёт с Android Studio как JBR 17)</li>
           <li>• Min SDK 26 (Android 8.0 Oreo)</li>
-          <li>• Target SDK 34 (Android 14)</li>
+          <li>• Target SDK 35 (Android 15)</li>
           <li>• Для уведомлений на Android 13+ нужно разрешение POST_NOTIFICATIONS</li>
           <li>• При первом открытии Android Studio скачает Gradle — нужен интернет</li>
           <li>• Если появится ошибка SDK — укажи путь к Android SDK в local.properties</li>
         </ul>
+      </div>
+
+      <div className="bg-blue-50 border border-blue-200 rounded-xl p-5">
+        <h3 className="font-semibold text-blue-800 flex items-center gap-2">
+          <span>🔧</span> Версии проекта
+        </h3>
+        <div className="mt-3 grid grid-cols-2 gap-2 text-sm text-blue-700">
+          <div><strong>Gradle:</strong> 9.1.0</div>
+          <div><strong>AGP:</strong> 9.0.1</div>
+          <div><strong>Kotlin:</strong> 2.1.0</div>
+          <div><strong>JDK:</strong> 17+</div>
+          <div><strong>Compile SDK:</strong> 35</div>
+          <div><strong>Target SDK:</strong> 35</div>
+        </div>
       </div>
 
       <div className="bg-green-50 border border-green-200 rounded-xl p-5">
@@ -319,14 +340,14 @@ function InstallTab() {
         <h3 className="font-semibold text-gray-800 mb-3">📦 Зависимости проекта</h3>
         <div className="grid md:grid-cols-2 gap-3">
           {[
-            'AndroidX Core KTX',
-            'Material Design 3',
-            'Room Database',
-            'Lifecycle ViewModel',
-            'RecyclerView',
-            'ConstraintLayout',
-            'Kotlin Coroutines',
-            'Gson',
+            'AndroidX Core KTX 1.15.0',
+            'Material Design 3 (1.12.0)',
+            'Room Database 2.6.1',
+            'Lifecycle ViewModel 2.8.7',
+            'RecyclerView 1.3.2',
+            'ConstraintLayout 2.2.0',
+            'Kotlin Coroutines 1.9.0',
+            'Gson 2.11.0',
           ].map((dep, i) => (
             <div key={i} className="flex items-center gap-2 text-sm text-gray-600">
               <span className="text-green-500">✓</span> {dep}
