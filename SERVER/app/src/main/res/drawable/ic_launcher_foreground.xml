@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Smiley face for emotion diary -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M54,30 C67.25,30 78,40.75 78,54 C78,67.25 67.25,78 54,78 C40.75,78 30,67.25 30,54 C30,40.75 40.75,30 54,30Z"
+        android:strokeWidth="2"
+        android:strokeColor="#FFFFFF" />
+    <!-- Left eye -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M44,48 m-3,0 a3,3 0,1 1,6 0 a3,3 0,1 1,-6 0" />
+    <!-- Right eye -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M64,48 m-3,0 a3,3 0,1 1,6 0 a3,3 0,1 1,-6 0" />
+    <!-- Smile -->
+    <path
+        android:fillColor="@android:color/transparent"
+        android:pathData="M42,60 Q54,72 66,60"
+        android:strokeWidth="3"
+        android:strokeColor="#FFFFFF" />
+    <!-- Heart -->
+    <path
+        android:fillColor="#FF6584"
+        android:pathData="M54,82 l-2,-1.8 C45.6,74.4 42,71.2 42,67.4 C42,64.4 44.4,62 47.4,62 C49.1,62 50.7,62.8 51.8,64 L54,66.2 L56.2,64 C57.3,62.8 58.9,62 60.6,62 C63.6,62 66,64.4 66,67.4 C66,71.2 62.4,74.4 56,80.2 L54,82Z" />
+</vector>
