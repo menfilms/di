@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Дневник эмоций</string>
+    <string name="add_entry">Добавить запись</string>
+    <string name="history">История</string>
+    <string name="settings">Настройки</string>
+    <string name="mood_level">Уровень настроения</string>
+    <string name="describe_mood">Опиши своё настроение</string>
+    <string name="save">Сохранить</string>
+    <string name="cancel">Отмена</string>
+    <string name="close">Закрыть</string>
+    <string name="notifications">Уведомления</string>
+    <string name="daily_reminder">Ежедневное напоминание</string>
+    <string name="support_messages">Сообщения поддержки</string>
+    <string name="about">О приложении</string>
+    <string name="no_entries">Пока нет записей</string>
+    <string name="average_mood">Среднее настроение</string>
+    <string name="week">За неделю</string>
+    <string name="notification_channel_reminder">Ежедневное напоминание</string>
+    <string name="notification_channel_support">Поддержка</string>
+    <string name="reminder_text">Как ты себя чувствуешь сегодня? Запиши свои эмоции!</string>
+    <string name="support_notification_title">Мы рядом 💙</string>
+</resources>
